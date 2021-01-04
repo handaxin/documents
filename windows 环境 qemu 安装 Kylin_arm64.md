@@ -32,8 +32,13 @@ E:\VM\qemu\qemu-system-aarch64.exe -m 4096 -cpu cortex-a72 -smp 2,cores=2,thread
 |-drive|添加一个驱动器，参数可重复|
 
 #### 启动镜像
+###### windows
 ```
-E:\VM\qemu\qemu-system-aarch64.exe -m 4096 -cpu cortex-a72 -smp 2,cores=2,threads=1,sockets=1 -M virt -bios E:\VM\qemu_img\QEMU_EFI.fd -device nec-usb-xhci -device usb-kbd -device usb-mouse -device VGA -device virtio-scsi-device -drive if=none,file=E:\VM\qemu_img\kylinDesktop_arm64.img,id=hd0 -device virtio-blk-device,drive=hd0
+E:\VM\qemu\qemu-system-aarch64.exe -m 8192 -cpu cortex-a72 -smp 2,cores=2,threads=1,sockets=1 -M virt -bios E:\VM\qemu_img\QEMU_EFI.fd -device nec-usb-xhci -device usb-kbd -device usb-mouse -device VGA -device virtio-scsi-device -drive if=none,file=E:\VM\qemu_img\kylinDesktop_arm64.img,id=hd0 -device virtio-blk-device,drive=hd0
+```
+###### linux
+```
+qemu-system-aarch64 -m 8192 -cpu cortex-a72 -smp 2,cores=2,threads=1,sockets=1 -M virt -bios /data/qemu/QEMU_EFI.fd -device nec-usb-xhci -device usb-kbd -device usb-mouse -device VGA -device virtio-scsi-device -drive if=none,file=/data/qemu/kylinDesktop_arm64.img,id=hd0 -device virtio-blk-device,drive=hd0
 ```
 #### 示例图
 ```
